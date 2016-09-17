@@ -31,11 +31,13 @@ app.post("/new-entry", function(request, response) {
     response.status(400).send("entries must have both a title and a body");
     return;
   }
+  
   entries.push({
     title: request.body.title,
     content: request.body.body,
     published: new Date()
   });
+
   response.redirect("/")
 });
 
